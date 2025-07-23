@@ -133,6 +133,7 @@ book_list = [{
 with open('azbook.json', 'w', encoding='UTF-8') as f:
     json.dump(book_list, f, indent=4)
 
+print(1233)
 root= ET.Element('')
 for b in books:
     book = ET.SubElement(root, 'book')
@@ -144,12 +145,6 @@ ET.indent(root, space="    ")
 tree = ET.ElementTree(root)
 tree.write('new_books.xml', encoding='utf-8', xml_declaration=True)
 
-# for book in books:
-#     print(book.id) 
-#     print(book.title)   
-#     print(book.year)    
-#     print(book.publisher.title)  
-#     print(book.author.name)
 
 
 
@@ -161,17 +156,4 @@ tree.write('new_books.xml', encoding='utf-8', xml_declaration=True)
 
 
 
-
-# Чтение CSV файла
-# with open('books.csv', 'r', encoding='utf-8') as f:
-#     csv_reader = csv.DictReader(f)
-#     for row in csv_reader:
-#         author = auth_s.create(row['Автор'])
-#         publisher = publ_s.create(row['Издательство'])
-#         book = book_s.create(
-#             row['Название книги'],
-#             row['Год выпуска'],
-#             author.id,
-#             publisher.id
-#         )
         
